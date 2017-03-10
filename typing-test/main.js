@@ -1,2 +1,45 @@
 // Put text on screen
+/* Using Text as Array
+ var text = ['How', 'vexingly', 'quick', 'daft', 'zebras', 'jump!'] */
+
 var text = "How vexingly quick daft zebras jump!"
+
+var phrase = text
+var textArray = phrase.split('')
+var textArrayLength = textArray.length
+var blank = []
+
+// function to create single letters into individual <span>'s
+//Issue - its creating a span of the whole array of individual letters
+
+for (i = 0; i < textArrayLength; i++) {
+  blank.push('<span>' + textArray[i] + '</span>')
+}
+
+/* g
+function sentence(characters) {
+  var results = []
+  function () {
+    .forEach( function (character) {
+      result.push(letter(character))
+    })
+  }
+  return result
+}
+
+
+/* function letter(character) {
+  var $character = document.createElement('span') //$character === new <span>
+  $character
+
+
+  //$character.textContent = character
+  //return $character
+}
+
+$text.querySelector ('span').classList.add('currentLetter')
+
+sentence(textArray).forEach( function (letter) {
+  $text.appendChild(letter)
+})
+*/
