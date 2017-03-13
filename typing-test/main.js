@@ -12,13 +12,13 @@ var blank = []
 // function to create single letters into individual <span>'s
 //Issue - its creating a span of the whole array of individual letters
 
-var $divCenter = document.createElement('div')
+var divCenter = document.createElement('div')
 
 for (var i = 0; i < textArrayLength; i++) {
   var $text = document.createElement('span')
   $text.className = 'center'
   $text.textContent = text[i]
-  document.getElementById('testText').appendChild($text)
+  document.body.appendChild($text)
 }
 // need to nest 'center' into div to be able to center
 
