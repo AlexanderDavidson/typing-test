@@ -3,11 +3,9 @@
  var text = ['How', 'vexingly', 'quick', 'daft', 'zebras', 'jump!'] */
 
 var text = "How vexingly quick daft zebras jump!"
-
 var phrase = text
 var textArray = phrase.split('')
 var textArrayLength = textArray.length
-var blank = []
 
 // function to create single letters into individual <span>'s
 //Issue - its creating a span of the whole array of individual letters
@@ -23,6 +21,11 @@ for (var i = 0; i < textArrayLength; i++) {
 }
 // need to nest 'center' into div to be able to center
 document.body.appendChild (divCenter)
+
+
+// Style the current letter
+var $firstLetter = document.querySelector ('span')
+$firstLetter.classList.add ('current')
 
 
 /* g
