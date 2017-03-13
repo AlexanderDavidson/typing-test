@@ -45,6 +45,7 @@ var keySelector = function (event) {
 document.addEventListener ('keypress', keySelector)
 console.log(error)
 
-if ('.done'.length === textArray) {
+var doneLength = document.querySelector('.centered .done').length
+if (doneLength === textArrayLength) {
   window.alert('You made ' + error + 'mistakes')
 }
