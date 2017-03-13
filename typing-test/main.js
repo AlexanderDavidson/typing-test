@@ -27,6 +27,19 @@ document.body.appendChild (divCenter)
 var $firstLetter = document.querySelector ('span')
 $firstLetter.classList.add ('current')
 
+var keySelector = function (event) {
+  var $current = document.querySelector('.current')
+  var $currentCharacter = $current.textContent
+  if (event.key === $currentCharacter) {
+    $current.classList.remove ('current')
+    $current.nextSibling.classList.add('current')
+  }
+  else {
+    $current.classList.add ('wrong')
+  }
+}
+document.addEventListener ('keypress', keySelector)
+
 
 /* g
 function sentence(characters) {
