@@ -1,12 +1,11 @@
-.center {
-  display: inline-block;
+.character {
   font-size: 8em;
-  position: fixed;
-  width: auto;
-  height: auto;
   margin: 10px;
-  left: 50%;
+  text-align: center;
+}
+
+.center {
   top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  left: 50%;
+  text-align: center;
 }
