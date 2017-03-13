@@ -33,7 +33,9 @@ var keySelector = function (event) {
   var $currentCharacter = $current.textContent
   if (event.key === $currentCharacter) {
     $current.classList.remove ('current')
-    $current.nextSibling.classList.add('current')
+    if ($current.nextSibling) {
+      $current.nextSibling.classList.add('current')
+    }
     $current.classList.remove ('wrong')
     $current.classList.add ('done')
   }
@@ -41,10 +43,15 @@ var keySelector = function (event) {
     $current.classList.add ('wrong')
     error++
   }
-}
-document.addEventListener ('keypress', keySelector)
-console.log(error)
 
-if ('.done'.length === textArray) {
-  window.alert('You made ' + error + 'mistakes')
+  var doneLength = document.querySelectorAll('.done').length
+  if (doneLength === textArrayLength) {
+    showScore()
+  }
+}
+
+document.addEventListener ('keypress', keySelector)
+
+function showScore() {
+  window.alert('You made ' + error + ' mistakes')
 }
