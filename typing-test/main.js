@@ -6,6 +6,7 @@ var text = "How vexingly quick daft zebras jump!"
 var phrase = text
 var textArray = phrase.split('')
 var textArrayLength = textArray.length
+var error = 0
 
 // function to create single letters into individual <span>'s
 //Issue - its creating a span of the whole array of individual letters
@@ -33,38 +34,17 @@ var keySelector = function (event) {
   if (event.key === $currentCharacter) {
     $current.classList.remove ('current')
     $current.nextSibling.classList.add('current')
+    $current.classList.remove ('wrong')
+    $current.classList.add ('done')
   }
   else {
     $current.classList.add ('wrong')
+    error++
   }
 }
 document.addEventListener ('keypress', keySelector)
+console.log(error)
 
-
-/* g
-function sentence(characters) {
-  var results = []
-  function () {
-    .forEach( function (character) {
-      result.push(letter(character))
-    })
-  }
-  return result
+if ('.done'.length === textArray) {
+  window.alert('You made ' + error + 'mistakes')
 }
-
-
-/* function letter(character) {
-  var $character = document.createElement('span') //$character === new <span>
-  $character
-
-
-  //$character.textContent = character
-  //return $character
-}
-
-$text.querySelector ('span').classList.add('currentLetter')
-
-sentence(textArray).forEach( function (letter) {
-  $text.appendChild(letter)
-})
-*/
